@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import xyz.ielis.modular_unit_testing.io.NameSource;
+import xyz.ielis.modular_unit_testing.io.SimpleNameSource;
 
 import java.util.List;
 
@@ -11,18 +12,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HelloTest {
 
-    private static NameSource nameSource;
+    private static NameSource NAME_SOURCE;
 
     private Hello hello;
 
     @BeforeAll
     static void beforeAll() {
-        nameSource = new NameSource(List.of("John", "Jane", "Julia"));
+        NAME_SOURCE = new SimpleNameSource(List.of("John", "Jane", "Julia"));
     }
 
     @BeforeEach
     void setUp() {
-        hello = new Hello(nameSource);
+        hello = new Hello(NAME_SOURCE);
     }
 
     @Test

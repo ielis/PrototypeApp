@@ -1,17 +1,9 @@
 package xyz.ielis.modular_unit_testing.io;
 
 import java.util.Collection;
-import java.util.List;
 
-public class NameSource {
+public interface NameSource {
 
-    private final Collection<String> names;
+    Collection<String> getNames();
 
-    public NameSource(Collection<String> names) {
-        this.names = names;
-    }
-
-    public Collection<String> getNames() {
-        return List.copyOf(names);
-    }
 }
