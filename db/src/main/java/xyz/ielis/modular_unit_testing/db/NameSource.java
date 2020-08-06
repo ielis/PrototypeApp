@@ -1,4 +1,4 @@
-package xyz.ielis.modular_unit_testing.io;
+package xyz.ielis.modular_unit_testing.db;
 
 import java.util.Collection;
 

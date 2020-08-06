@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>xyz.ielis.modular_unit_testing</groupId>
-            <artifactId>io</artifactId>
+            <artifactId>db</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

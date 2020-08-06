@@ -1,14 +1,14 @@
 package xyz.ielis.modular_unit_testing.core;
 
-import xyz.ielis.modular_unit_testing.io.NameSource;
+import xyz.ielis.modular_unit_testing.db.NameSource;
 
 import java.util.stream.Collectors;
 
-public class Hello {
+public class Greeter {
 
     private final NameSource nameSource;
 
-    public Hello(NameSource nameSource) {
+    public Greeter(NameSource nameSource) {
         this.nameSource = nameSource;
     }
 
