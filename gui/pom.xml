@@ -13,14 +13,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>xyz.ielis.prototype</groupId>
+            <artifactId>core</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>xyz.ielis.prototype</groupId>
-            <artifactId>core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
@@ -36,12 +36,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.2.1.RELEASE</version>
+                <version>2.2.6.RELEASE</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>repackage</goal>
                         </goals>
+                        <configuration>
+                            <classifier>fat</classifier>
+                            <excludeDevtools>true</excludeDevtools>
+                            <executable>true</executable>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -71,8 +76,8 @@
                             <launcher>launch.sh</launcher>
                             <!--<options></options>--> <!--specify command line variables/arguments-->
                             <compress>2</compress>
-                            <jlinkZipName>ModularUnitTesting</jlinkZipName>
-                            <jlinkImageName>ModularUnitTesting</jlinkImageName>
+                            <jlinkZipName>PrototypeApp</jlinkZipName>
+                            <jlinkImageName>PrototypeApp</jlinkImageName>
                             <noManPages>true</noManPages>
                             <noHeaderFiles>true</noHeaderFiles>
                         </configuration>
