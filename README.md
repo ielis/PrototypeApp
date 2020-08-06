@@ -1,10 +1,10 @@
 # Prototype App
 
-Prototype for a modular Java app:
+Setup for a modular Java app:
 - Java 11+
 - Maven
 - Java modules
-- Maven modules (db, core, cli, gui)
+- Maven modules (model, core, cli, gui)
 - JUnit Jupiter for unit testing
 
 The prototype consists of several Maven modules:
