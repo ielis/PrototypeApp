@@ -3,8 +3,8 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ModularUnitTesting</artifactId>
-        <groupId>xyz.ielis.modular_unit_testing</groupId>
+        <artifactId>PrototypeApp</artifactId>
+        <groupId>xyz.ielis.prototype</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,44 +13,81 @@
 
     <dependencies>
         <dependency>
-            <groupId>xyz.ielis.modular_unit_testing</groupId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>xyz.ielis.prototype</groupId>
             <artifactId>core</artifactId>
-            <version>${project.parent.version}</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>14</version>
+            <version>11</version>
         </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.3</version>
-                <configuration>
-                    <mainClass>xyz.ielis.modular_unit_testing.gui.Main</mainClass>
-                    <launcher>launch.sh</launcher>
-                    <!--<options></options>--> <!--specify command line variables/arguments-->
-                    <compress>2</compress>
-                    <jlinkZipName>ModularUnitTesting</jlinkZipName>
-                    <jlinkImageName>ModularUnitTesting</jlinkImageName>
-                    <noManPages>true</noManPages>
-                    <noHeaderFiles>true</noHeaderFiles>
-                </configuration>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.1.RELEASE</version>
                 <executions>
                     <execution>
-                        <phase>package</phase>
                         <goals>
-                            <goal>jlink</goal>
+                            <goal>repackage</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <!-- Build JLink image by activating the profile. -->
+            <!-- The building does not work at the moment because Spring uses automatic modules. -->
+            <!-- Automatic modules do not work with JLink at the moment. -->
+            <!-- `mvn -DbuildImage clean package` -->
+            <id>release-build-image</id>
+            <activation>
+                <property>
+                    <name>buildImage</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.openjfx</groupId>
+                        <artifactId>javafx-maven-plugin</artifactId>
+                        <version>0.0.3</version>
+                        <configuration>
+                            <mainClass>xyz.ielis.prototype.gui.Main</mainClass>
+                            <launcher>launch.sh</launcher>
+                            <!--<options></options>--> <!--specify command line variables/arguments-->
+                            <compress>2</compress>
+                            <jlinkZipName>ModularUnitTesting</jlinkZipName>
+                            <jlinkImageName>ModularUnitTesting</jlinkImageName>
+                            <noManPages>true</noManPages>
+                            <noHeaderFiles>true</noHeaderFiles>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jlink</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

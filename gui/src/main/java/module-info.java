@@ -1,6 +1,17 @@
-module xyz.ielis.modular_unit_testing.gui {
-    requires xyz.ielis.modular_unit_testing.core;
-    requires javafx.controls;
+module xyz.ielis.prototype.gui {
+    requires xyz.ielis.prototype.core;
+    requires xyz.ielis.prototype.model;
 
-    exports xyz.ielis.modular_unit_testing.gui to javafx.graphics;
+    requires javafx.controls;
+    requires javafx.fxml;
+
+    requires spring.context;
+    requires spring.boot;
+    requires spring.boot.autoconfigure;
+
+    exports xyz.ielis.prototype.gui to javafx.graphics, spring.context;
+    opens xyz.ielis.prototype.gui to spring.core, spring.beans;
+
+    exports xyz.ielis.prototype.gui.controller to javafx.fxml;
+    opens xyz.ielis.prototype.gui.controller to javafx.fxml, spring.beans;
 }
