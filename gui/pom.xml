@@ -3,8 +3,8 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ModularUnitTesting</artifactId>
-        <groupId>xyz.ielis.modular_unit_testing</groupId>
+        <artifactId>PrototypeApp</artifactId>
+        <groupId>xyz.ielis.prototype</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -18,9 +18,9 @@
         </dependency>
 
         <dependency>
-            <groupId>xyz.ielis.modular_unit_testing</groupId>
+            <groupId>xyz.ielis.prototype</groupId>
             <artifactId>core</artifactId>
-            <version>${project.parent.version}</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -67,7 +67,7 @@
                         <artifactId>javafx-maven-plugin</artifactId>
                         <version>0.0.3</version>
                         <configuration>
-                            <mainClass>xyz.ielis.modular_unit_testing.gui.Main</mainClass>
+                            <mainClass>xyz.ielis.prototype.gui.Main</mainClass>
                             <launcher>launch.sh</launcher>
                             <!--<options></options>--> <!--specify command line variables/arguments-->
                             <compress>2</compress>

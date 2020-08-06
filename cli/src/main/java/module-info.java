@@ -1,4 +1,4 @@
-module xyz.ielis.modular_unit_testing.cli {
-    requires xyz.ielis.modular_unit_testing.core;
-    requires xyz.ielis.modular_unit_testing.db;
+module xyz.ielis.prototype.cli {
+    requires xyz.ielis.prototype.core;
+    requires xyz.ielis.prototype.model;
 }

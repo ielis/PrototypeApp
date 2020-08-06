@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>xyz.ielis.modular_unit_testing</groupId>
-    <artifactId>ModularUnitTesting</artifactId>
+    <groupId>xyz.ielis.prototype</groupId>
+    <artifactId>PrototypeApp</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>db</module>
+        <module>model</module>
         <module>core</module>
         <module>cli</module>
         <module>gui</module>

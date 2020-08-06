@@ -9,14 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>core</artifactId>
+    <artifactId>model</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>xyz.ielis.prototype</groupId>
-            <artifactId>model</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-    </dependencies>
 
 </project>
