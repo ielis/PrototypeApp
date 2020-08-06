@@ -13,6 +13,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>xyz.ielis.modular_unit_testing</groupId>
             <artifactId>core</artifactId>
             <version>${project.parent.version}</version>
@@ -21,13 +26,32 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>14</version>
+            <version>11</version>
         </dependency>
     </dependencies>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.1.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
     <profiles>
         <profile>
-            <!-- Build JLink image by activating the profile: -->
+            <!-- Build JLink image by activating the profile. -->
+            <!-- The building does not work at the moment because Spring uses automatic modules. -->
+            <!-- Automatic modules do not work with JLink at the moment. -->
             <!-- `mvn -DbuildImage clean package` -->
             <id>release-build-image</id>
             <activation>
