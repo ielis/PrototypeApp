@@ -10,24 +10,24 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GreeterTest {
+public class GreeterTest {
 
     private static NameSource NAME_SOURCE;
 
     private Greeter greeter;
 
     @BeforeAll
-    static void beforeAll() {
+    public static void beforeAll() {
         NAME_SOURCE = new FileNameSource(List.of("John", "Jane", "Julia"));
     }
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         greeter = new Greeter(NAME_SOURCE);
     }
 
     @Test
-    void greet() {
+    public void greet() {
         final String greet = greeter.greet();
         assertEquals("Hi John\nHi Jane\nHi Julia", greet);
     }

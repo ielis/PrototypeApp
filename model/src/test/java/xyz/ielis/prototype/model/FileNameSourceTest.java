@@ -9,17 +9,17 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 
-class FileNameSourceTest {
+public class FileNameSourceTest {
 
     private FileNameSource source;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         source = new FileNameSource();
     }
 
     @Test
-    void getNames() {
+    public void getNames() {
         Collection<String> names = source.getNames();
         assertThat(names, hasSize(2));
         assertThat(names, hasItems("Joe", "Jane"));

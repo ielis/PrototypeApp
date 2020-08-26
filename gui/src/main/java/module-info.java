@@ -1,6 +1,5 @@
 module xyz.ielis.prototype.gui {
     requires xyz.ielis.prototype.core;
-    requires xyz.ielis.prototype.model;
 
     requires javafx.controls;
     requires javafx.fxml;
